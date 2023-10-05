@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { Redis } from "ioredis"
 
 import { env } from "~/env.mjs";
 
@@ -14,3 +15,5 @@ export const db =
   });
 
 if (env.NODE_ENV !== "production") globalForPrisma.prisma = db;
+
+export const redis = env.REDIS_URL ? new Redis(env.REDIS_URL) : new Redis()

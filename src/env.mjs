@@ -31,6 +31,9 @@ export const env = createEnv({
     // Add `.min(1) on ID and SECRET if you want to make sure they're not empty
     DISCORD_CLIENT_ID: z.string(),
     DISCORD_CLIENT_SECRET: z.string(),
+    TMDB_API_TOKEN: z.string(),
+    TMDB_API_URL: z.string().url(),
+    REDIS_URL: z.string().optional()
   },
 
   /**
@@ -53,6 +56,9 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    TMDB_API_TOKEN: process.env.TMDB_API_TOKEN,
+    TMDB_API_URL: process.env.TMDB_API_URL,
+    REDIS_URL: process.env.REDIS_URL
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
